@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تجريبي لاونج | Tajribi Lounge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: #f3eee7;
+      color: #2b2b2b;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      overflow-x: hidden;
+      animation: fadeIn 1s ease-in-out;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    .logo {
+      font-size: 36px;
+      color: #c7a35e;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .english-btn {
+      position: absolute;
+      left: 20px;
+      top: 30px;
+      background: none;
+      border: none;
+      color: #c7a35e;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .english-btn:hover {
+      color: #b89548;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px auto;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: #fff;
+      border: 1px solid #c7a35e;
+      color: #c7a35e;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: #c7a35e;
+      color: #fff;
+    }
+    .tab-content {
+      display: none;
+      max-width: 600px;
+      margin: auto;
+      animation: fade 0.5s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #e0d9cd;
+    }
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+    .menu-item span {
+      font-size: 18px;
+    }
+    footer {
+      text-align: center;
+      color: #999;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    .qr {
+      display: block;
+      margin: 20px auto;
+      width: 200px;
+      height: 200px;
+    }
+    @keyframes fade {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="english-btn">🇬🇧 English</button>
+    <div class="logo">تجريبي لاونج</div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab('appetizers')">المقبلات</button>
+    <button class="tab-btn" onclick="openTab('mains')">الأطباق الرئيسية</button>
+    <button class="tab-btn" onclick="openTab('desserts')">الحلويات</button>
+    <button class="tab-btn" onclick="openTab('drinks')">المشروبات</button>
+  </div>
+
+  <div id="appetizers" class="tab-content active">
+    <div class="menu-item"><span>فتوش</span><span>28 ريال</span></div>
+    <div class="menu-item"><span>تبولة</span><span>26 ريال</span></div>
+    <div class="menu-item"><span>حمص بالطحينة</span><span>22 ريال</span></div>
+    <div class="menu-item"><span>سبرينغ رول خضار</span><span>24 ريال</span></div>
+    <div class="menu-item"><span>بطاطس ترافل</span><span>32 ريال</span></div>
+  </div>
+
+  <div id="mains" class="tab-content">
+    <div class="menu-item"><span>كباب مشوي على الفحم</span><span>68 ريال</span></div>
+    <div class="menu-item"><span>دجاج تكا</span><span>59 ريال</span></div>
+    <div class="menu-item"><span>أرز برياني</span><span>52 ريال</span></div>
+    <div class="menu-item"><span>سلمون مشوي</span><span>89 ريال</span></div>
+    <div class="menu-item"><span>ستيك تندرلوين</span><span>120 ريال</span></div>
+  </div>
+
+  <div id="desserts" class="tab-content">
+    <div class="menu-item"><span>تشيز كيك الزعفران</span><span>38 ريال</span></div>
+    <div class="menu-item"><span>كنافة بالقشطة</span><span>32 ريال</span></div>
+    <div class="menu-item"><span>مولتن شوكليت</span><span>35 ريال</span></div>
+    <div class="menu-item"><span>آيس كريم الفستق</span><span>28 ريال</span></div>
+  </div>
+
+  <div id="drinks" class="tab-content">
+    <div class="menu-item"><span>قهوة تركية</span><span>18 ريال</span></div>
+    <div class="menu-item"><span>لاتيه كراميل</span><span>24 ريال</span></div>
+    <div class="menu-item"><span>موهيتو نعناع</span><span>29 ريال</span></div>
+    <div class="menu-item"><span>شاي مغربي</span><span>22 ريال</span></div>
+    <div class="menu-item"><span>مياه معدنية</span><span>8 ريال</span></div>
+  </div>
+
+  <img src="qr.png" alt="QR Code" class="qr">
+  
+  <footer>
+    © 2025 Tajribi Lounge | Designed by Eng. Saud Al-Zahrani
+  </footer>
+
+  <script>
+    function openTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-btn');
+      tabs.forEach(t => t.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
